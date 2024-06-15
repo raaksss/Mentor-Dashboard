@@ -7,7 +7,7 @@ const TeacherMenu = () => {
     <>
       <MenuItem
         icon={GrTableAdd}
-        label='Add Class'
+        label='Student Insights'
         address='/dashboard/add-class'
       />
       <MenuItem
