@@ -14,6 +14,7 @@ const App = () => {
           <Routes>
             <Route path="/dashboard/profile" element={<Profile />} />
             <Route path="/dashboard/add-class" element={<StudentInsightPage />} />
+            <Route path="/dashboard/feedback" element={<StudentInsightPage />} />
             
             {/* Define more routes as needed */}
           </Routes>
