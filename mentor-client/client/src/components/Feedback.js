@@ -1,162 +1,69 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import {
-  Box,
-  Heading,
-  VStack,
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
-  Textarea,
-  Button
-} from '@chakra-ui/react';
 
-const feedbackSchema = z.object({
-  mentorName: z.string().min(1, 'Mentor name is required'),
-  phone: z.string().min(1, 'Phone is required'),
-  email: z.string().email('Invalid email address'),
-  date: z.string().min(1, 'Date is required'),
-  studentName: z.string().min(1, 'Student name is required'),
-  studentId: z.string().min(1, 'Student ID is required'),
-  studentCourse: z.string().min(1, 'Student course is required'),
-  engagement: z.string().min(1, 'Engagement is required'),
-  improvement: z.string().min(1, 'Areas of improvement are required'),
-  concerns: z.string().min(1, 'Concerns are required'),
-  progress: z.string().min(1, 'Overall progress is required'),
-  comments: z.string().optional(),
-});
-
-const Feedback = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: zodResolver(feedbackSchema),
-  });
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
+const Feedback= () => {
   return (
-    <Box
-      bg='#523521'
-      color='white'
-      p={6}
-      rounded='md'
-      shadow='md'
-      maxW='lg'
-      mx='auto'
-      mt={8}
-    >
-      <Heading as='h1' size='lg' mb={6} textAlign='center'>
-        Feedback Form
-      </Heading>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <VStack spacing={4}>
-          <FormControl isInvalid={errors.mentorName}>
-            <FormLabel htmlFor='mentorName'>Mentor Name</FormLabel>
-            <Input id='mentorName' {...register('mentorName')} />
-            <FormErrorMessage>
-              {errors.mentorName && errors.mentorName.message}
-            </FormErrorMessage>
-          </FormControl>
+    <div className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto mt-8">
+      <h2 className="text-xl font-bold mb-6 text-gray-800">Feedback Form</h2>
+      <form>
+        <div className="mb-4">
+          <label htmlFor="mentorName" className="block text-sm font-medium text-gray-700">
+            Mentor Name
+          </label>
+          <input
+            type="text"
+            id="mentorName"
+            name="mentorName"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#dbb857] focus:border-transparent"
+            placeholder="Enter Mentor Name"
+          />
+        </div>
 
-          <FormControl isInvalid={errors.phone}>
-            <FormLabel htmlFor='phone'>Phone</FormLabel>
-            <Input id='phone' {...register('phone')} />
-            <FormErrorMessage>
-              {errors.phone && errors.phone.message}
-            </FormErrorMessage>
-          </FormControl>
+        <div className="mb-4">
+          <label htmlFor="date" className="block text-sm font-medium text-gray-700">
+            Date
+          </label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#dbb857] focus:border-transparent"
+          />
+        </div>
 
-          <FormControl isInvalid={errors.email}>
-            <FormLabel htmlFor='email'>Email</FormLabel>
-            <Input id='email' type='email' {...register('email')} />
-            <FormErrorMessage>
-              {errors.email && errors.email.message}
-            </FormErrorMessage>
-          </FormControl>
+        <div className="mb-4">
+          <label htmlFor="studentName" className="block text-sm font-medium text-gray-700">
+            Student Name
+          </label>
+          <input
+            type="text"
+            id="studentName"
+            name="studentName"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#dbb857] focus:border-transparent"
+            placeholder="Enter Student Name"
+          />
+        </div>
 
-          <FormControl isInvalid={errors.date}>
-            <FormLabel htmlFor='date'>Date</FormLabel>
-            <Input id='date' type='date' {...register('date')} />
-            <FormErrorMessage>
-              {errors.date && errors.date.message}
-            </FormErrorMessage>
-          </FormControl>
+        <div className="mb-4">
+          <label htmlFor="studentReview" className="block text-sm font-medium text-gray-700">
+            Student Review
+          </label>
+          <textarea
+            id="studentReview"
+            name="studentReview"
+            rows="4"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#dbb857] focus:border-transparent"
+            placeholder="Enter Student Review"
+          ></textarea>
+        </div>
 
-          <FormControl isInvalid={errors.studentName}>
-            <FormLabel htmlFor='studentName'>Student Name</FormLabel>
-            <Input id='studentName' {...register('studentName')} />
-            <FormErrorMessage>
-              {errors.studentName && errors.studentName.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl isInvalid={errors.studentId}>
-            <FormLabel htmlFor='studentId'>Student ID</FormLabel>
-            <Input id='studentId' {...register('studentId')} />
-            <FormErrorMessage>
-              {errors.studentId && errors.studentId.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl isInvalid={errors.studentCourse}>
-            <FormLabel htmlFor='studentCourse'>Student Course</FormLabel>
-            <Input id='studentCourse' {...register('studentCourse')} />
-            <FormErrorMessage>
-              {errors.studentCourse && errors.studentCourse.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl isInvalid={errors.engagement}>
-            <FormLabel htmlFor='engagement'>Engagement of Participation</FormLabel>
-            <Textarea id='engagement' {...register('engagement')} />
-            <FormErrorMessage>
-              {errors.engagement && errors.engagement.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl isInvalid={errors.improvement}>
-            <FormLabel htmlFor='improvement'>Areas of Improvement</FormLabel>
-            <Textarea id='improvement' {...register('improvement')} />
-            <FormErrorMessage>
-              {errors.improvement && errors.improvement.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl isInvalid={errors.concerns}>
-            <FormLabel htmlFor='concerns'>Concerns</FormLabel>
-            <Textarea id='concerns' {...register('concerns')} />
-            <FormErrorMessage>
-              {errors.concerns && errors.concerns.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl isInvalid={errors.progress}>
-            <FormLabel htmlFor='progress'>Overall Progress</FormLabel>
-            <Textarea id='progress' {...register('progress')} />
-            <FormErrorMessage>
-              {errors.progress && errors.progress.message}
-            </FormErrorMessage>
-          </FormControl>
-
-          <FormControl>
-            <FormLabel htmlFor='comments'>Additional Comments</FormLabel>
-            <Textarea id='comments' {...register('comments')} />
-          </FormControl>
-
-          <Button type='submit' colorScheme='orange' width='full' mt={4}>
-            Submit
-          </Button>
-        </VStack>
+        <button
+          type="submit"
+          className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#523521] hover:bg-[#7e654c] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#dbb857]"
+        >
+          Submit Feedback
+        </button>
       </form>
-    </Box>
+    </div>
   );
 };
 
