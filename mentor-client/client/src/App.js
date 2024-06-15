@@ -12,7 +12,7 @@ const App = () => {
         <div className="flex-1 p-4">
           <Routes>
             <Route path="/dashboard/profile" element={<Profile />} />
-
+            
             {/* Define more routes as needed */}
           </Routes>
         </div>
