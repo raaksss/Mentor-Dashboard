@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionHeader from '../components/sectionHeader/sectionHeader'; // Adjust path as per your project structure
-import StudentCard from '../components/studentCard'; // Example component for displaying student details
+import StudentCard from '../components/studentCard'; // Adjust path as per your project structure
 import mentorData from './student-data.json'; // Path to your JSON data
 
 const StudentInsightPage = () => {
