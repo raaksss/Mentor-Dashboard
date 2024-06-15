@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const BarGraph = ({ studentProgress }) => {
+const BarGraph = ({ studentProgress, width = 400, height = 200 }) => {
   const chartContainer = useRef(null);
   const chartInstance = useRef(null);
 
@@ -48,7 +48,7 @@ const BarGraph = ({ studentProgress }) => {
 
   return (
     <div>
-      <canvas ref={chartContainer} />
+      <canvas ref={chartContainer} width={width} height={height} />
     </div>
   );
 };

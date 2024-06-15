@@ -5,13 +5,17 @@ import { CgInsights } from "react-icons/cg";
 import { RiFeedbackLine } from "react-icons/ri";
 import { GrUserManager } from 'react-icons/gr'; // Example additional icon
 import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { IoChatboxEllipsesOutline } from "react-icons/io5";
 
 const Sidebar = () => {
   const menuItems = [
     { label: 'Profile', address: '/profile', icon: GrUserManager },
     { label: 'Dashboard', address: '/dashboard', icon: MdOutlineDashboardCustomize },
+    { label: 'Channel', address: '/dashboard/channel', icon: IoChatboxEllipsesOutline  },
+
     { label: 'Student Insights', address: '/dashboard/add-class', icon: CgInsights },
     { label: 'Feedback', address: '/dashboard/feedback', icon: RiFeedbackLine },
+    
     // Add more items as needed
   ];
 

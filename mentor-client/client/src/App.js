@@ -6,6 +6,7 @@ import StudentInsightPage from './components/StudentInsightPage';
 import Feedback from './components/Feedback';
 import { GrDashboard } from 'react-icons/gr';
 import Dashboard from './components/Dashboard';
+import Channels from './components/Channels';
 // Import other components here
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/dashboard/add-class" element={<StudentInsightPage />} />
             <Route path="/dashboard/feedback" element={<Feedback />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard/channel" element={<Channels />} />
 
 
             {/* <Route path="/dashboard" element={<Dashboard />} /> */}

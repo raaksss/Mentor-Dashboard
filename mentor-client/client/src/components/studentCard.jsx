@@ -6,14 +6,13 @@ const StudentCard = ({ student }) => {
   // Define dynamic background color styles based on region
   const getBackgroundColor = (region) => {
     switch (region) {
-      case 'East Coast':
-        return '#f0f4c3'; // light green
+  
       case 'Midwest':
-        return '#c3f0f4'; // light blue
+        return '#dbb857'; 
       case 'West Coast':
-        return '#f4c3f0'; // light pink
+        return '#7e654c'; 
       default:
-        return '#f0f0f0'; // light gray
+        return '#dbcfb9'; 
     }
   };
 
