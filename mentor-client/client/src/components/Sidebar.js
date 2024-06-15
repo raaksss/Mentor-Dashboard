@@ -76,11 +76,17 @@ const Sidebar = () => {
           <div>
             <hr />
 
-            <MenuItem
-              icon={ ImProfile }
-              label='Profile'
-              address='/dashboard/profile'
-            />
+            <NavLink
+                  to='/dashboard/profile'
+                  className={({ isActive }) =>
+                    `flex items-center px-4 py-2 mt-5 transition-colors text-white ${
+                      isActive ? 'bg-[#03b97c]' : 'bg-gray-700'
+                    }`
+                  }
+                >
+                  <ImProfile className='w-5 h-5' />
+                  <span className='mx-4 font-medium'>Profile</span>
+                </NavLink>
             <button
               className='flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform'
             >
@@ -95,4 +101,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Sidebar;
