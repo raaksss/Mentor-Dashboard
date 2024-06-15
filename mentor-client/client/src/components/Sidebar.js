@@ -3,7 +3,7 @@ import MenuItem from './MenuItem';
 
 // Icons
 import { GrLogout } from 'react-icons/gr';
-import { FcSettings } from 'react-icons/fc';
+import { ImProfile } from "react-icons/im";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdDashboardCustomize } from 'react-icons/md';
 import TeacherMenu from './TeacherMenu';
@@ -77,7 +77,7 @@ const Sidebar = () => {
             <hr />
 
             <MenuItem
-              icon={FcSettings}
+              icon={ ImProfile }
               label='Profile'
               address='/dashboard/profile'
             />

@@ -1,17 +1,17 @@
-import { GrTableAdd } from 'react-icons/gr';
-import { SiGoogleclassroom } from 'react-icons/si';
+import { CgInsights } from "react-icons/cg";
+import { RiFeedbackLine } from "react-icons/ri";
 import MenuItem from './MenuItem';
 
 const TeacherMenu = () => {
   return (
     <>
       <MenuItem
-        icon={GrTableAdd}
+        icon={ CgInsights } 
         label='Student Insights'
         address='/dashboard/add-class'
       />
       <MenuItem
-        icon={SiGoogleclassroom}
+        icon={RiFeedbackLine}
         label='Feedback'
         address='/dashboard/my-class'
       />
