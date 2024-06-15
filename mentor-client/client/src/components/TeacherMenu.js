@@ -13,7 +13,7 @@ const TeacherMenu = () => {
       <MenuItem
         icon={RiFeedbackLine}
         label='Feedback'
-        address='/dashboard/my-class'
+        address='/dashboard/feedback'
       />
     </>
   );

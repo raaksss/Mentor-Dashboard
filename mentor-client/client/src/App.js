@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Profile from './components/Profile';
 import StudentInsightPage from './components/StudentInsightPage';
+import Feedback from './components/Feedback';
 // Import other components here
 
 const App = () => {
@@ -14,9 +15,9 @@ const App = () => {
           <Routes>
             <Route path="/dashboard/profile" element={<Profile />} />
             <Route path="/dashboard/add-class" element={<StudentInsightPage />} />
-            <Route path="/dashboard/feedback" element={<StudentInsightPage />} />
-            
-            {/* Define more routes as needed */}
+            <Route path="/dashboard/feedback" element={<Feedback />} />
+
+           
           </Routes>
         </div>
       </div>
