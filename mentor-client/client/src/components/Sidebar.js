@@ -1,104 +1,52 @@
-import { useState } from 'react';
-import MenuItem from './MenuItem';
 
-// Icons
-import { GrLogout } from 'react-icons/gr';
-import { ImProfile } from "react-icons/im";
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdDashboardCustomize } from 'react-icons/md';
-import TeacherMenu from './TeacherMenu';
-import { Link, NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { CgInsights } from "react-icons/cg";
+import { RiFeedbackLine } from "react-icons/ri";
+import { GrUserManager } from 'react-icons/gr'; // Example additional icon
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+
 const Sidebar = () => {
-
-  const [isActive, setActive] = useState(false);
-
-
-  // Sidebar Responsive Handler
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
+  const menuItems = [
+    { label: 'Profile', address: '/profile', icon: GrUserManager },
+    { label: 'Dashboard', address: '/dashboard', icon: MdOutlineDashboardCustomize },
+    { label: 'Student Insights', address: '/dashboard/add-class', icon: CgInsights },
+    { label: 'Feedback', address: '/dashboard/feedback', icon: RiFeedbackLine },
+    // Add more items as needed
+  ];
 
   return (
-    <>
-      {/* Small Screen Navbar */}
-      <div className='bg-gray-100 text-gray-800 flex justify-between md:hidden'>
-        <div className='block cursor-pointer p-4 font-bold'>
-          <Link to='/'>
-          </Link>
+    <nav className="bg-[#523521] h-full text-gray-200 min-h-screen w-64 flex flex-col">
+      <div className="container mx-auto py-4">
+        <div className="flex items-center justify-between mb-8">
+          <NavLink to="/" className="text-gray-200 text-lg font-bold px-4 hover:text-black">
+            <img src="https://eklavyaindia.org/wp-content/uploads/2024/03/LOGO.png" className='w-20 h-20 object-cover mx-auto rounded-lg mx-auto p-2' alt="Logo"></img>
+          </NavLink>
         </div>
-
-        <button
-          onClick={handleToggle}
-          className='mobile-menu-button p-4 focus:outline-none focus:bg-gray-200'
-        >
-          <GiHamburgerMenu className='h-5 w-5' />
-        </button>
-      </div>
-      {/* Sidebar */}
-      <div
-        className={`z-10 md:fixed flex flex-col justify-start overflow-x-hidden bg-gray-200 w-64 space-y-6 absolute inset-y-0 left-0 transform ${
-          isActive && '-translate-x-full'
-        }  md:translate-x-0  transition duration-200 ease-in-out`}
-      >
-        <div className='w-full md:flex px-4 py-5 -mb-5 shadow-lg rounded-sm justify-center items-center bg-gray-300 mx-auto'>
-          <Link to='/'>
-          
-          </Link>
-        </div>
-
-        <div
-          onClick={handleToggle}
-          className='h-full !mt-0 flex flex-col justify-between'
-        >
-          <div>
-            {/* Nav Items */}
-            <div className='flex flex-col justify-between flex-1'>
-              {/* If a user is host */}
-              <nav>
-                <NavLink
-                  to='/dashboard'
-                  end
-                  className={({ isActive }) =>
-                    `flex items-center px-4 py-2 mt-5 transition-colors text-white ${
-                      isActive ? 'bg-[#03b97c]' : 'bg-gray-700'
-                    }`
-                  }
-                >
-                  <MdDashboardCustomize className='w-5 h-5' />
-
-                  <span className='mx-4 font-medium'>Dashboard</span>
-                </NavLink>
-                { <TeacherMenu />}
-              </nav>
-            </div>
-          </div>
-
-          <div>
-            <hr />
-
+        <div>
+          {menuItems.map(({ label, address, icon: Icon }) => (
             <NavLink
-                  to='/dashboard/profile'
-                  className={({ isActive }) =>
-                    `flex items-center px-4 py-2 mt-5 transition-colors text-white ${
-                      isActive ? 'bg-[#03b97c]' : 'bg-gray-700'
-                    }`
-                  }
-                >
-                  <ImProfile className='w-5 h-5' />
-                  <span className='mx-4 font-medium'>Profile</span>
-                </NavLink>
-            <button
-              className='flex w-full items-center px-4 py-2 mt-1 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform'
+              key={address}
+              to={address}
+              end
+              className={({ isActive }) =>
+                `flex items-center px-4 py-2 text-gray-200 hover:bg-[#f8f6ef] hover:text-[#523521] transition-colors duration-300 rounded-lg ${
+                  isActive ? 'bg-[#f8f6ef] text-black' : 'text-white'
+                }`
+              }
             >
-              <GrLogout className='w-5 h-5' />
-
-              <span className='mx-4 font-medium'>Logout</span>
-            </button>
-          </div>
+              <Icon className="w-5 h-5" />
+              <span className="mx-2">{label}</span>
+            </NavLink>
+          ))}
         </div>
       </div>
-    </>
+      <div className="mt-auto py-4 px-4 text-gray-200 text-sm">
+     
+      </div>
+    </nav>
   );
 };
 
-export default Sidebar;
+export default Sidebar;
+

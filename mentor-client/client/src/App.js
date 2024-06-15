@@ -4,6 +4,8 @@ import Sidebar from './components/Sidebar';
 import Profile from './components/Profile';
 import StudentInsightPage from './components/StudentInsightPage';
 import Feedback from './components/Feedback';
+import { GrDashboard } from 'react-icons/gr';
+import Dashboard from './components/Dashboard';
 // Import other components here
 
 const App = () => {
@@ -13,9 +15,13 @@ const App = () => {
         <Sidebar />
         <div className="flex-1 p-4">
           <Routes>
-            <Route path="/dashboard/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/dashboard/add-class" element={<StudentInsightPage />} />
             <Route path="/dashboard/feedback" element={<Feedback />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+
+
+            {/* <Route path="/dashboard" element={<Dashboard />} /> */}
 
            
           </Routes>

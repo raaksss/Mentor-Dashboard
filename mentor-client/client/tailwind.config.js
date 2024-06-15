@@ -3,15 +3,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
-    colors:{
-      brown:'#523521',
-      lbrown:'#7e654c',
-      mustard:'#d8be90',
-      grey:'#bcb2ae',
-      white:'#f8f6ef'
-
-    }
+    extend: {
+      colors: {
+        // Define custom colors here
+        '523521': '#523521',
+        '03b97c': '#03b97c',
+        'f8f6ef': '#f8f6ef',
+      },
+    },
   },
   plugins: [],
 }

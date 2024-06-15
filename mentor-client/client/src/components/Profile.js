@@ -14,18 +14,18 @@ const Profile = () => {
         <title>Profile</title>
       
       <div className='bg-white shadow-lg rounded-md w-11/12 md:w-3/5'>
-        <div className='bg-[#03b97c] w-full h-[150px] rounded-t-md'></div>
+        <div className='bg-[#523521] w-full h-[150px] rounded-t-md'></div>
         <div className='flex flex-col items-center justify-center p-4 -mt-16'>
           <span className='relative block'>
             <img
               alt='profile'
               //src={userProfile?.image}
               
-              className='mx-auto object-cover rounded-full h-24 w-24 border-t-white border-2 border-[#03b97cb4] '
+              className='mx-auto object-cover runded-full h-24 w-24 border-t-white border-2 border-[#523521] '
             />
           </span>
 
-          <p className='p-2 px-4 text-xs text-white bg-[#03b97cb4] rounded-full mt-4 uppercase'>
+          <p className='p-2 px-4 text-xs text-white bg-[#523521] rounded-full mt-4 uppercase'>
             {`Data Science`}
           </p>
           <p className='mt-2 text-xl font-medium text-gray-800 '>
