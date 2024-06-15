@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+
 //import { getSingleUsers } from '../../../api/auth';
 
 const Profile = () => {
