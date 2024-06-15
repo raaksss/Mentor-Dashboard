@@ -12,7 +12,7 @@ const TeacherMenu = () => {
       />
       <MenuItem
         icon={SiGoogleclassroom}
-        label='My Class'
+        label='Feedback'
         address='/dashboard/my-class'
       />
     </>

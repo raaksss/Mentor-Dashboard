@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import logo from '../public/download.jpeg';
 import MenuItem from './MenuItem';
 
 // Icons
@@ -21,13 +20,12 @@ const Sidebar = () => {
 
   return (
     <>
-      { /* Small Screen Navbar */}
-      <div className='text-gray-800 flex justify-between md:hidden bg-white'>
-  <div className='block cursor-pointer p-4 font-bold'>
-    <Link to='/'>
-      <img src={logo} alt='logo' style={{ maxWidth: '50px', maxHeight: '50px' }} />
-    </Link>
-  </div>
+      {/* Small Screen Navbar */}
+      <div className='bg-gray-100 text-gray-800 flex justify-between md:hidden'>
+        <div className='block cursor-pointer p-4 font-bold'>
+          <Link to='/'>
+          </Link>
+        </div>
 
         <button
           onClick={handleToggle}
@@ -37,10 +35,14 @@ const Sidebar = () => {
         </button>
       </div>
       {/* Sidebar */}
-      <div className={`z-10 md:fixed flex flex-col justify-start overflow-x-hidden bg-gray-200 w-16 md:w-64 space-y-6 absolute inset-y-0 left-0 transform ${isActive ? '-translate-x-full md:translate-x-0' : 'translate-x-0'} transition duration-200 ease-in-out`}>
+      <div
+        className={`z-10 md:fixed flex flex-col justify-start overflow-x-hidden bg-gray-200 w-64 space-y-6 absolute inset-y-0 left-0 transform ${
+          isActive && '-translate-x-full'
+        }  md:translate-x-0  transition duration-200 ease-in-out`}
+      >
         <div className='w-full md:flex px-4 py-5 -mb-5 shadow-lg rounded-sm justify-center items-center bg-gray-300 mx-auto'>
           <Link to='/'>
-            <img src={logo} alt='logo' width='100' height='100' />
+          
           </Link>
         </div>
 
