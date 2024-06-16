@@ -8,7 +8,7 @@
         "student_name": "Alice",
         "courses_enrolled": ["Mathematics", "Physics"],
         "region": "East Coast",
-        "attendance_percentage": 92,
+        "attendance_percentage": 43,
         "languages_known": ["English", "Spanish"],
         "mentor_feedback": "Alice is a dedicated student and shows strong interest in Physics.",
         "meetings": [
@@ -47,7 +47,7 @@
         "student_name": "David",
         "courses_enrolled": ["Chemistry", "Biology"],
         "region": "South",
-        "attendance_percentage": 90,
+        "attendance_percentage": 49,
         "languages_known": ["English", "Spanish"],
         "mentor_feedback": "David demonstrates a keen interest in biological sciences and shows excellent lab skills.",
         "meetings": [
@@ -99,7 +99,7 @@
         "student_name": "Henry",
         "courses_enrolled": ["Physics", "Engineering"],
         "region": "South",
-        "attendance_percentage": 86,
+        "attendance_percentage": 40,
         "languages_known": ["English", "Chinese"],
         "mentor_feedback": "Henry excels in physics and engineering concepts. He shows strong problem-solving skills.",
         "meetings": [

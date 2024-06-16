@@ -22,7 +22,7 @@ const Profile = () => {
           <span className='relative block'>
             <img
               alt='profile'
-              // src={userProfile?.image}
+              src="https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               className='mx-auto object-cover rounded-full h-24 w-24 border-t-white border-2 border-[#523521]'
             />
           </span>

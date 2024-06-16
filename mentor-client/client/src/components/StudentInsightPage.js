@@ -12,8 +12,8 @@ const StudentInsightPage = () => {
   };
 
   const filteredStudents = showLowAttendance
-    ? mentor.students.filter((student) => student.attendance < 50)
-    : mentor.students.slice(0, 5);
+    ? mentor.students.filter((student) => student.attendance_percentage < 50)
+    : mentor.students.slice(0, 10);
 
   return (
     <div>

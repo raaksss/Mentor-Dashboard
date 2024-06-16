@@ -7,6 +7,7 @@ import Feedback from './components/Feedback';
 import { GrDashboard } from 'react-icons/gr';
 import Dashboard from './components/Dashboard';
 import Channels from './components/Channels';
+import FooterAdmin from './components/FooterAdmin';
 // Import other components here
 
 const App = () => {
@@ -28,8 +29,10 @@ const App = () => {
            
           </Routes>
         </div>
+        <FooterAdmin />
       </div>
     </Router>
+   
   );
 };
 
